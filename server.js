@@ -46,7 +46,7 @@ const adminUsername = process.env.ADMIN_USERNAME || 'admin';
 const adminPassword = process.env.ADMIN_PASSWORD || 'Tasper@15';
 const adminPasswordHash = bcrypt.hashSync(adminPassword, 12);
 
-app.disable('x-powered-by');
+app.set('trust proxy', 1);
 app.use(helmet({ contentSecurityPolicy: false }));
 app.use(express.json({ limit: '100kb' }));
 app.use(express.urlencoded({ extended: false }));
