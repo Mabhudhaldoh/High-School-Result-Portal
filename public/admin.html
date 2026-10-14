@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0d2f5c">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Administrator | MLK Results Portal</title>
+  <link rel="icon" href="/school-logo.png">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="top-strip"></div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="/">
+        <img class="school-logo" src="/school-logo.png" alt="Martin Luther King Jnr. Family of Schools logo">
+        <div>
+          <p class="eyebrow">MARTIN LUTHER KING JNR · FAMILY OF SCHOOLS</p>
+          <h1>Martin Luther King Jnr. Family of Schools</h1>
+          <p class="brand-sub">Results Administration</p>
+        </div>
+      </a>
+      <nav class="header-nav">
+        <a class="nav-link" href="/">Student portal <span aria-hidden="true">↗</span></a>
+        <a class="admin-link" href="https://www.mlkschools.ac.zw" target="_blank" rel="noopener">School website <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="admin-shell">
+    <div class="admin-title">
+      <div>
+        <span class="section-kicker">Portal management</span>
+        <h2>Administrator dashboard</h2>
+        <p class="muted">Manage results securely by importing the approved school workbook.</p>
+      </div>
+      <div class="admin-badge"><span class="status-dot"></span> Restricted access</div>
+    </div>
+
+    <section id="admin-login-panel" class="login-card admin-login">
+      <div class="login-card-heading">
+        <div class="login-icon">♙</div>
+        <div><h2>Administrator sign in</h2><p>Authorized staff only</p></div>
+      </div>
+      <form id="admin-login-form">
+        <label for="admin-username">Username</label>
+        <div class="input-wrap"><span>▤</span><input id="admin-username" name="username" autocomplete="username" required placeholder="Administrator username"></div>
+        <label for="admin-password">Password</label>
+        <div class="input-wrap"><span>⌑</span><input id="admin-password" name="password" type="password" autocomplete="current-password" required placeholder="Administrator password"></div>
+        <div id="admin-login-message" class="message" role="status"></div>
+        <button class="primary-button" type="submit">Sign in to dashboard <span>→</span></button>
+      </form>
+    </section>
+
+    <section id="admin-dashboard" class="dashboard hidden">
+      <div class="stat-grid">
+        <article class="stat-card"><span class="stat-symbol">♙</span><div><p>Student accounts</p><strong id="student-count">—</strong></div></article>
+        <article class="stat-card"><span class="stat-symbol blue-bg">▤</span><div><p>Result records</p><strong id="result-count">—</strong></div></article>
+        <article class="stat-card"><span class="stat-symbol pale-bg">◷</span><div><p>Last import</p><strong class="date-stat" id="last-import">Not yet imported</strong></div></article>
+      </div>
+
+      <div class="admin-content-grid">
+        <section class="panel">
+          <div class="panel-heading">
+            <div class="panel-icon">⇧</div>
+            <div><h3>Import results workbook</h3><p>Upload an Excel file prepared by the school.</p></div>
+          </div>
+          <div class="notice"><strong>Before importing</strong><p>Check student numbers, marks, term, year and passwords. Each row represents one subject for one student. A new import replaces the current displayed result records.</p></div>
+          <form id="import-form">
+            <label for="workbook">Excel workbook (.xlsx or .xls)</label>
+            <label class="file-drop" for="workbook">
+              <span class="upload-symbol">⇧</span>
+              <strong id="file-name">Choose a workbook to upload</strong>
+              <small>Excel files only · Maximum 10 MB</small>
+              <input type="file" id="workbook" name="workbook" accept=".xlsx,.xls" required>
+            </label>
+            <div id="import-message" class="message" role="status"></div>
+            <button class="primary-button" type="submit">Import workbook <span>→</span></button>
+          </form>
+        </section>
+
+        <section class="panel format-panel">
+          <div class="panel-heading">
+            <div class="panel-icon blue-panel-icon">▦</div>
+            <div><h3>Workbook format</h3><p>Use these column headings in row 1.</p></div>
+          </div>
+          <div class="column-list">
+            <span>StudentNumber</span><span>StudentName</span><span>Password</span><span>Class</span>
+            <span>Term</span><span>Year</span><span>Subject</span><span>Mark</span>
+            <span class="optional">Grade (optional)</span><span class="optional">TeacherComment (optional)</span>
+            <span class="optional">ClassPosition (optional)</span>
+          </div>
+          <p class="muted small">Use one row per subject. Keep this workbook private because it contains student information and initial passwords.</p>
+          <button id="logout-button" class="secondary-button" type="button">Sign out</button>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-col footer-brand">
+      <span class="footer-mark">MLK</span>
+      <span class="footer-line">Martin Luther King Jnr. Family of Schools</span>
+      <span class="footer-motto">“Quality Education to the Total Person for the Whole Nation.”</span>
+      <span>Learning today. Leading tomorrow.</span>
+    </div>
+    <div class="footer-col">
+      <h4>Contact us</h4>
+      <div class="footer-list">
+        <a href="https://www.mlkschools.ac.zw" target="_blank" rel="noopener">www.mlkschools.ac.zw</a>
+        <a href="tel:+263772275046">+263 772 275 046</a>
+        <a href="mailto:accounts@mlkschools.ac.zw">accounts@mlkschools.ac.zw</a>
+        <span>Warren Park 1, Along Bulawayo Road, Harare, Zimbabwe</span>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Portal</h4>
+      <div class="footer-list">
+        <a href="/">Student results</a>
+        <a href="/admin.html">Staff / Administrator</a>
+        <a href="https://www.mlkschools.ac.zw" target="_blank" rel="noopener">School website ↗</a>
+        <span>Office hours: Mon – Fri, 08:00 – 16:00</span>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Martin Luther King Jnr. Family of Schools. All rights reserved.</span>
+      <span>Authorized staff only.</span>
+    </div>
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>
