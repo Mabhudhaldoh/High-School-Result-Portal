@@ -43,7 +43,7 @@ CREATE INDEX IF NOT EXISTS idx_results_student ON results(student_number);
 `);
 
 const adminUsername = process.env.ADMIN_USERNAME || 'admin';
-const adminPassword = process.env.ADMIN_PASSWORD || 'ChangeThisAdminPassword123!';
+const adminPassword = process.env.ADMIN_PASSWORD || 'Tasper@15';
 const adminPasswordHash = bcrypt.hashSync(adminPassword, 12);
 
 app.disable('x-powered-by');
